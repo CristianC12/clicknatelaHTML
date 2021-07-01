@@ -10,14 +10,32 @@
 
 function desenha(evento){
 
+    var clicar = false
+    
+    
+    if (clicar){
     var x = evento.pageX - tela.offsetLeft;
     var y = evento.pageY - tela.offsetTop;
     pincel.fillStyle = "red";
     pincel.beginPath();
-    pincel.arc(x,y, 6, 0, 2 * 3.14)
+    pincel.arc(x,y, 6, 0, 2 * 3.14);
     pincel.fill();
+}}
 
+
+tela.onmousemove = desenha;
+
+function desenhaSim(){
+
+    clicar=true;
 }
 
-tela.onclick = desenha;
+function desenhaNao(){
+
+    clicar=false;
+}
+
+
+tela.onmousedown = desenhaSim;
+tela.onmouseup = desenhaNao;
 </script>
