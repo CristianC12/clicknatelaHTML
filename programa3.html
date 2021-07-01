@@ -7,20 +7,17 @@
     pincel.fillStyle = 'grey';
     pincel.fillRect(0, 0, 600, 400);
 
-function desenha(evento){
 
-    var bola = 6
-    if (evento.shiftKey ) {bola =+ 10} 
+function desenha(evento){
 
     var x = evento.pageX - tela.offsetLeft;
     var y = evento.pageY - tela.offsetTop;
     pincel.fillStyle = "red";
     pincel.beginPath();
-    pincel.arc(x,y, bola, 0, 2 * 3.14)
+    pincel.arc(x,y, 6, 0, 2 * 3.14)
     pincel.fill();
 
 }
-
 
 tela.onclick = desenha;
 </script>
