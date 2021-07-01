@@ -7,13 +7,16 @@
     pincel.fillStyle = 'grey';
     pincel.fillRect(0, 0, 600, 400);
 
-function alerta(evento){
+function desenha(evento){
 
-    var x = evento.pageX;
-    var y = evento.pageY;
+    var x = evento.pageX - tela.offsetLeft;
+    var y = evento.pageY - tela.offsetTop;
+    pincel.fillStyle = "red";
+    pincel.beginPath();
+    pincel.arc(x,y, 6, 0, 2 * 3.14)
+    pincel.fill();
 
-    alert("Você clicou em:"+" x "+x+ " e y " + y)
 }
 
-tela.onclick = alerta;
+tela.onclick = desenha;
 </script>
