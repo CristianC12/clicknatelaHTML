@@ -8,9 +8,9 @@
     pincel.fillRect(0, 0, 600, 400);
 
 
+    var clicar = false
 function desenha(evento){
 
-    var clicar = false
     
     
     if (clicar){
@@ -23,19 +23,20 @@ function desenha(evento){
 }}
 
 
+
 tela.onmousemove = desenha;
 
-function desenhaSim(){
+function habilitaDesenhar() {
 
-    clicar=true;
+    clicar = true;
 }
 
-function desenhaNao(){
+function desabilitaDesenhar() {
 
-    clicar=false;
+    clicar = false;
 }
 
+tela.onmousedown = habilitaDesenhar;
 
-tela.onmousedown = desenhaSim;
-tela.onmouseup = desenhaNao;
+tela.onmouseup = desabilitaDesenhar;
 </script>
